@@ -14,7 +14,7 @@
         .swimMessage ul,
         .swimMessage ul li,
         .swimCopy,
-        .swimSection{
+        .circle {
             position: relative;
             height: auto;
             overflow: hidden;
@@ -22,6 +22,11 @@
         
         .swimCont {
             background-color: red;
+        }
+        
+        .swimSection {
+            position: relative;
+            height: auto;
         }
         
         .swimMessage {
@@ -41,24 +46,65 @@
             font-family: "Trebuchet MS", Helvetica, sans-serif;
             font-size: 1.0em;
             color: #242021;
-            text-align:center;
+            text-align: center;
+            padding: 10px 0 10px 0;
         }
         
         .swimCopy p {
             font-family: "Trebuchet MS", Helvetica, sans-serif;
             font-size: 1.0em;
             color: #242021;
-            text-align:center;
+            text-align: center;
         }
+        
+        .swimCopy p:first-child {
+            color: red;
+        }
+        
+        .swimCopy img {
+            width: 100%!important;
+            height: auto!important;
+            max-width: 370px;
+            display: block;
+            margin: 0 auto;
+        }
+        
         .swimSection {
-            background-color:#242021;
-            padding: 10px 10px 10px 20px;
+            background-color: #242021;
+            padding: 10px 10px 10px 150px;
             color: #fff;
-             
+            margin: 40px 0 40px 0;
         }
+        
         .swimSection h2 {
             font-family: "Trebuchet MS", Helvetica, sans-serif;
             font-size: 1.0em;
+        }
+        
+        table.gridtable {
+            margin: 0 auto;
+            font-family: verdana, arial, sans-serif;
+            color: #333333;
+            border-width: 1px;
+            border-color: #666666;
+            border-collapse: collapse;
+            border-bottom: 1px solid #666666;
+        }
+        
+        table.gridtable th {
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #666666;
+            background-color: #dedede;
+        }
+        
+        table.gridtable td {
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #666666;
+            background-color: #ffffff;
         }
         
         @media screen and (min-width: 0px) {
@@ -66,6 +112,12 @@
                 width: 100%!important;
                 height: auto!important;
                 display: block;
+            }
+            .smallHeader {
+                display: block!important;
+            }
+            .largeHeader {
+                display: none!important;
             }
             .swimLogo {
                 display: block;
@@ -90,11 +142,48 @@
             .swimCopy {
                 padding: 0 20px 0 20px;
             }
+            .circle {
+                position: absolute!important;
+                top: -25px;
+                left: 20px;
+                z-index: 99;
+            }
+            table.gridtable {
+                font-size: 12px;
+            }
         }
         
         @media screen and (min-width: 360px) {}
         
-        @media screen and (min-width: 700px) {}
+        @media screen and (min-width: 700px) {
+            .smallHeader {
+                display: none!important;
+            }
+            .largeHeader {
+                display: block!important;
+            }
+            .swimLogo img {
+                max-width: 240px;
+            }
+            .swimMessage ul {
+                background-color: #242021;
+                text-align: center;
+                padding: 20px 0 20px 0;
+            }
+            .swimMessage ul li {
+                display: inline-block;
+            }
+            .swimMessage ul li a {
+                margin-bottom: 0;
+                border-right: 1px solid #fff;
+            }
+            .swimMessage ul li:last-child a {
+                border-right: none;
+            }
+            table.gridtable {
+                font-size: 15px;
+            }
+        }
         
         @media screen and (min-width: 959px) {}
         
@@ -107,47 +196,119 @@
 <body>
     <div class="swimCont">
         <div class="swimMessage">
-            <div class="swimHeader"> <img src="https://raw.githubusercontent.com/makey123/swimdress-boutique/master/images/woman500.jpg" width="1" height="1" alt="Swimdress Boutique"> </div>
+            <div class="swimHeader"> <img src="https://raw.githubusercontent.com/makey123/swimdress-boutique/master/images/woman500.jpg" width="1" height="1" alt="Swimdress Boutique" class="smallHeader"> <img src="https://raw.githubusercontent.com/makey123/swimdress-boutique/master/images/womanHeader.jpg" width="1" height="1" alt="Swimdress Boutique" class="largeHeader"></div>
             <div class="swimLogo"><img src="https://raw.githubusercontent.com/makey123/swimdress-boutique/master/images/main-logo.jpg" alt="swimdress Boutique"></div>
             <ul>
-                <li><a href="#">swim briefs</a></li>
-                <li><a href="#">swim skirts</a></li>
-                <li><a href="#">swimdresses</a></li>
-                <li><a href="#">swimsuits</a></li>
-                <li><a href="#">tankinis</a></li>
-                <li><a href="#">accessories</a></li>
+                <li><a href="http://stores.ebay.co.uk/Swimdress-Boutique/Tummy-Control-Bikini-Briefs-/_i.html?_fsub=3761219011">swim briefs</a></li>
+                <li><a href="http://stores.ebay.co.uk/Swimdress-Boutique/Swim-Skirts-/_i.html?_fsub=3158725011">swim skirts</a></li>
+                <li><a href="http://stores.ebay.co.uk/Swimdress-Boutique/Swim-Dresses-/_i.html?_fsub=3158722011&_sid=85968071&_trksid=p4634.c0.m322">swimdresses</a></li>
+                <li><a href="http://stores.ebay.co.uk/Swimdress-Boutique/Tummy-Control-Swimsuits-/_i.html?_fsub=3158724011">swimsuits</a></li>
+                <li><a href="http://stores.ebay.co.uk/Swimdress-Boutique/Tankini-Tops-/_i.html?_fsub=3158723011">tankinis</a></li>
+                <li><a href="http://stores.ebay.co.uk/Swimdress-Boutique/Bikinis-/_i.html?_fsub=3444823011">bikinis</a></li>
             </ul>
             <div class="swimCopy">
-                <h2>this is the header</h2>
-                <p>This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy </p>
+                <h2>Fit 4 U Tummy Control Tankini Set</h2> <img src="http://i1096.photobucket.com/albums/g340/liznay27/001white_1.jpg" width="100%" height="auto" ;/>
+                <p>These were on sale in the USA for $107.00 (approx £65)</p>
+                <p>Eye Catching, Feminine Tribal Design</p>
+                <p>Frilly detail helps to hide any lumps and bumps</p>
+                <p>UK/AUS sizes 12-16</p>
+                <p>Cut for the fuller figure to emphasize your best bits and hide your flaws!</p>
+                <p>Tummy control panel to flatten your stomach</p>
+                <p>Elasticated Soft Cup Bra (fixed) to support your bust</p>
+                <p>Top Measures 18" long from under arm to hem</p>
+                <p>Briefs are full and come right up to the navel with a tummy control layer</p>
             </div>
             <div class="swimSection">
-            <h2>Shipping</h2>
+                <h2>Shipping</h2>
+                <div class="circle"><img src="https://raw.githubusercontent.com/makey123/swimdress-boutique/master/images/circle.png" alt="circle"></div>
             </div>
-                     <div class="swimCopy">
-                <h2>this is the header</h2>
-                <p>This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy </p>
+            <div class="swimCopy">
+                <p>I ship Worldwide*, normally within 24 hours of cleared payment</p>
+                <p>Please see listing details for Postage costs to your country</p>
+                <p>Items within the UK are sent recorded delivery 2nd class unless you select another option</p>
+                <p>Please note, to protect us both from Fraud, I will only ship to your registered PayPal address</p>
+                <p>I do not profit from Postage costs and do not charge for postage and packaging. For all UK postage, the price shown for shipping is the cost to me from Royal Mail as RM now charge a flat fee for all items under 750g</p>
+                <p>* Some exceptions apply</p>
             </div>
-                <div class="swimSection">
-            <h2>Sizing Information</h2>
+            <div class="swimSection">
+                <h2>Sizing Information</h2>
+                <div class="circle"><img src="https://raw.githubusercontent.com/makey123/swimdress-boutique/master/images/circle.png" alt="circle"></div>
             </div>
-                     <div class="swimCopy">
-                <h2>this is the header</h2>
-                <p>This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy </p>
+            <div class="swimCopy">
+                <table class="gridtable">
+                    <thead>
+                        <tr>
+                            <th>Size</th>
+                            <th>16W</th>
+                            <th>18W</th>
+                            <th>20W</th>
+                            <th>22W</th>
+                            <th>24W</th>
+                        </tr>
+                        <tr>
+                            <td>Bust</td>
+                            <td>42</td>
+                            <td>44</td>
+                            <td>46</td>
+                            <td>48</td>
+                            <td>50</td>
+                        </tr>
+                        <tr>
+                            <td>Waist</td>
+                            <td>34</td>
+                            <td>36</td>
+                            <td>38.5</td>
+                            <td>41</td>
+                            <td>43.5</td>
+                        </tr>
+                        <tr>
+                            <td>Hip</td>
+                            <td>44</td>
+                            <td>46</td>
+                            <td>48</td>
+                            <td>50</td>
+                            <td>52</td>
+                        </tr>
+                        <tr>
+                            <td>Torso</td>
+                            <td>65</td>
+                            <td>66.5</td>
+                            <td>68</td>
+                            <td>69.5</td>
+                            <td>70.75</td>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
             </div>
-                     <div class="swimSection">
-            <h2>Contact Details</h2>
+            <div class="swimSection">
+                <h2>Contact Details</h2>
+                <div class="circle"><img src="https://raw.githubusercontent.com/makey123/swimdress-boutique/master/images/circle.png" alt="circle"></div>
             </div>
-                     <div class="swimCopy">
-                <h2>this is the header</h2>
-                <p>This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy </p>
+            <div class="swimCopy">
+             <p>Call: 07976 710791</p>
+                <p>Website: swimdressboutique.com</p>
+                <p>Email: Liz@swimdressboutique.com</p>
             </div>
-                              <div class="swimSection">
-            <h2>Returns & Refunds</h2>
+            <div class="swimSection">
+                <h2>Returns & Refunds</h2>
+                <div class="circle"><img src="https://raw.githubusercontent.com/makey123/swimdress-boutique/master/images/circle.png" alt="circle"></div>
             </div>
-                     <div class="swimCopy">
-                <h2>this is the header</h2>
-                <p>This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy This is the body copy </p>
+            <div class="swimCopy">
+                <p>Please note that items must be returned in a saleable condition with all tags and hygiene labels attached.</p>
+                <p>Please keep all underwear on and hygiene labels attached whilst trying on swimwear :0)</p>
+                <p>PLEASE NOTE THAT ALL POSTAGE COSTS ARE TO BE COVERED BY THE BUYER</p>
+            </div>
+            <div class="swimSection">
+                <h2>Terms & Conditions</h2>
+                <div class="circle"><img src="https://raw.githubusercontent.com/makey123/swimdress-boutique/master/images/circle.png" alt="circle"></div>
+            </div>
+            <div class="swimCopy">
+                <p>Please buy with confidence. I aim to provide an excellent level of customer service.</p>
+                <p>All items come with a 7 day money back guarantee.</p>
+                <p>If you are not happy with your item or if it doesn't fit well, please call or e mail me in the first instance and we can arrange for you to return the item to me for an exchange or refund.</p>
+                <p>This service is in addition to your statutory rights.</p>
+                <p>Feedback: I am proud of my feedback which has been earnt by providing top quality products, fast shipping and excellent customer service. If you feel that something hasn't been quite right, please allow me the chance to rectify it before leaving feedback. </p>
             </div>
         </div>
     </div>
